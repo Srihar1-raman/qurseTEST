@@ -1,0 +1,45 @@
+/* ===================================
+   QURSE GLOBAL STYLES
+   Main entry point for all styles
+   =================================== */
+
+/* Import modular styles - MUST come before @tailwind */
+@import '../styles/base.css';
+@import '../styles/layout.css';
+@import '../styles/animations.css';
+
+/* Import component styles */
+@import '../styles/components/auth.css';
+@import '../styles/components/info.css';
+@import '../styles/components/info-enhanced.css';
+@import '../styles/components/conversation.css';
+@import '../styles/components/history.css';
+@import '../styles/components/settings.css';
+@import '../styles/components/pricing.css';
+@import '../styles/components/rate-limit.css';
+@import '../styles/components/shiki.css';
+@import '../styles/components/homepage.css';
+@import '../styles/components/tool-call.css';
+@import '../styles/components/search-results.css';
+
+/* Tailwind directives */
+/* stylelint-disable at-rule-no-unknown */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* stylelint-enable at-rule-no-unknown */
+
+/* Diagram actions for Mermaid, Vega-Lite, PlantUML */
+.diagram-container {
+  @apply relative;
+}
+
+.diagram-actions {
+  @apply absolute top-2 right-2 z-10 flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200;
+}
+
+.diagram-actions .action-button {
+  @apply p-1 rounded border border-border bg-background shadow-sm
+         transition-all duration-200 hover:bg-muted hover:scale-105
+         text-muted-foreground flex items-center justify-center;
+}
